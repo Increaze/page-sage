@@ -134,13 +134,4 @@ import Popup, { type PopupStatus, type SummaryResult } from "./Popup";
 
 Supported states are `idle`, `loading`, `result`, and `error`.
 
-## Demo Video
-
-A 2-5 minute demo video is recommended for submission. Suggested outline:
-
-1. Show `chrome://extensions` loading the unpacked extension.
-2. Start the proxy with `OPENROUTER_API_KEY` and `GEMINI_API_KEY`.
-3. Open an article and click **Summarize Page**.
-4. Show summary, key insights, reading time, copy button, cache behavior, and optional highlights.
-5. Briefly show the README security notes and the absence of committed secrets.
 # page-sage

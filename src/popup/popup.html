@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Page Summarizer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Current page</p>
+          <h1 id="pageTitle">Ready to summarize</h1>
+        </div>
+        <button id="settingsButton" class="icon-button" type="button" aria-label="Open settings" title="Open settings">
+          ⚙
+        </button>
+      </header>
+
+      <section class="controls" aria-label="Summary controls">
+        <label class="field">
+          <span>Length</span>
+          <select id="summaryMode">
+            <option value="brief">3 bullets</option>
+            <option value="balanced">Balanced</option>
+            <option value="detailed">Detailed</option>
+          </select>
+        </label>
+        <label class="toggle">
+          <input id="highlightToggle" type="checkbox" />
+          <span>Highlight</span>
+        </label>
+      </section>
+
+      <div class="button-row">
+        <button id="summarizeButton" class="primary-button" type="button">
+          <span class="spinner" aria-hidden="true"></span>
+          <span id="summarizeLabel">Summarize Page</span>
+        </button>
+        <button id="clearButton" class="secondary-button" type="button">Clear</button>
+      </div>
+
+      <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+      <p id="errorMessage" class="error" role="alert" hidden></p>
+
+      <section id="summaryPanel" class="summary-panel" hidden>
+        <div class="summary-meta">
+          <span id="readingTime"></span>
+          <span id="cacheBadge" class="badge" hidden>Cached</span>
+        </div>
+
+        <h2>Summary</h2>
+        <ul id="summaryList"></ul>
+
+        <h2>Key insights</h2>
+        <ul id="insightsList"></ul>
+
+        <button id="copyButton" class="secondary-button full-width" type="button">Copy summary</button>
+      </section>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

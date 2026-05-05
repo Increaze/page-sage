@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "AI Page Summarizer",
+  "description": "Extracts readable page content, summarizes it with an AI proxy, and can highlight key points in-page.",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Summarize this page"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/content/content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "src/options/options.html",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://127.0.0.1:8787/*", "http://localhost:8787/*"]
+}

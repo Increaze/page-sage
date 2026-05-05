@@ -1,0 +1,16 @@
+{
+  "name": "ai-page-summarizer-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "proxy": "node proxy/server.js",
+    "check": "node --check proxy/server.js && node --check src/background/service-worker.js && node --check src/content/content-script.js && node --check src/popup/popup.js && node --check src/options/options.js"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
